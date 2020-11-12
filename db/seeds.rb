@@ -18,3 +18,12 @@ Ingredient.create!(name: "Sweet Vermouth")
 Ingredient.create!(name: "Strawberry schnapps")
 Ingredient.create!(name: "Champagne")
 puts "Finished!"
+
+puts "Cleaning database..."
+Cocktail.destroy_all
+
+puts "Creating ingredients..."
+Cocktail.create!(name: "Mojito")
+Cocktail.create!(name: "White Russian")
+
+puts "Finished!"
