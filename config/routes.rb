@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # A user can see the list of cocktails
   get "/cocktails", to: "cocktails#index"
 
-  # A user can see the details of a given cocktail, with the dose needed for each ingredient.
-  get "/cocktails/:id", to: "cocktails#show"
+  # A user can create a new cocktail
+  get "/cocktails/new", to: "cocktails#new"
+  post "/cocktails", to: "cocktails#create"
 
+  # A user can see the details of a given cocktail, with the dose needed for each ingredient.
+  get "/cocktails/:id", to: "cocktails#show", as: "cocktail"
 end
