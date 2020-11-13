@@ -3,7 +3,11 @@
 
   <% @cocktails.each do |cocktail| %>
     <div class="card-product my-3">
-      <%= cl_image_tag("o6jibuxzzm3rr1d1npko", width: 400, height: 300, crop: :fill) %>
+      <% if cocktail.photo.attached? %>
+        <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= cl_image_tag "o6jibuxzzm3rr1d1npko", width: 400, height: 300, crop: :fill %>
+      <% end %>
       <div class="card-product-infos">
         <h2><%= cocktail.name %></h2>
         <%= link_to("Détails", cocktail_path(cocktail)) %>
@@ -12,4 +16,5 @@
     </div>
   <% end %>
 
+  <%= link_to "Add a cocktail", new_cocktail_path %>
 </div>
