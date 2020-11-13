@@ -1,7 +1,15 @@
-<h1>All cocktails</h1>
+<div class="container">
+  <h1>All cocktails</h1>
 
-<ul>
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to(cocktail.name, cocktail_path(cocktail)) %></li>
+    <div class="card-product my-3">
+      <%= cl_image_tag("o6jibuxzzm3rr1d1npko", width: 400, height: 300, crop: :fill) %>
+      <div class="card-product-infos">
+        <h2><%= cocktail.name %></h2>
+        <%= link_to("Détails", cocktail_path(cocktail)) %>
+        <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
+      </div>
+    </div>
   <% end %>
-</ul>
+
+</div>
