@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # get 'cocktails/:id/edit', to: 'cocktails#edit', as: :edit_cocktail
   # # update a cocktail
   # patch 'cocktails/:id', to: 'cocktails#update'
+  root to: "cocktails#index"
 
   resources :cocktails, only: [:index, :new, :create, :show] do
     resources :doses, only: [:new, :create]
